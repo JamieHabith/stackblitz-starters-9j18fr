@@ -57,3 +57,28 @@ body {
   color: #333;
   text-align: center;
 }
+
+
+.marquee-container {
+  width: 50%;          /* Container breitet sich über den gesamten Bildschirm aus */
+  overflow: hidden;     /* Verhindert das Überlaufen des Bildes */
+  position: relative;   /* Ermöglicht die Animation */
+}
+
+/* Animation für das Bild */
+.marquee-image {
+  position: absolute;
+  animation: marquee 10s linear infinite; /* Marquee-Effekt (10s für die Bewegung, unendlich wiederholend) */
+  width: 150px;        /* Skalierung des Bildes */
+  height: auto;        /* Höhe bleibt proportional */
+}
+
+/* Die Bewegung von rechts nach links */
+@keyframes marquee {
+  from {
+      left: 100%;       /* Startposition des Bildes (rechts außerhalb des Containers) */
+  }
+  to {
+      left: -200px;     /* Endposition des Bildes (links außerhalb des Containers) */
+  }
+}
