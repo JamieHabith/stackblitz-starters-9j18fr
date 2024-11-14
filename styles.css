@@ -31,10 +31,11 @@
 }
 
 body {
-  background-color: #ffffff; /* Dunkelblau als Hintergrundfarbe */
-  color: rgb(0, 0, 0); /* Textfarbe für besseren Kontrast */
+  margin: 50;  /* Entfernt den Abstand um den gesamten Body */
+  padding: 50; /* Entfernt den Innenabstand */
+  align-items: center; /* Vertikale Zentrierung */
+  font-family: 'Arial', sans-serif;
 }
-
 .rot {
   color: rgb(167, 32, 32); /* Rot */
   font-weight: bold; /* Fett */
@@ -49,4 +50,10 @@ body {
     border-bottom: 1px solid #afafaf;
     padding: 5px 0 5px 20px;
   }
+}
+
+#uhr {
+  font-size: 2em;
+  color: #333;
+  text-align: center;
 }
