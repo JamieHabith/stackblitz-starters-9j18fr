@@ -1,0 +1,52 @@
+#content {
+  text-align: center;
+}
+
+#header {
+  text-align: center;
+  background-color: #d6ffd7; /* Hintergrundfarbe der Box */
+  color: rgb(0, 0, 0); /* Textfarbe im Header */
+  padding: 20px; /* Innenabstand (Padding) für mehr Raum */
+  text-align: center; /* Text zentrieren */
+  border-radius: 0px; /* Abgerundete Ecken (optional) */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optionaler Schatten */
+  border: 2px solid #333; /* Dunkler Rand */
+  margin: 50px auto;
+}
+
+.active {
+  color: rgb(167, 32, 32); /* Der Link wird rot */
+  font-weight: bold; /* Optional: Der Link wird fett */
+}
+
+#footer {
+  text-align: center;
+  background-color: #d8d8d8; /* Hintergrundfarbe der Box */
+  color: rgb(0, 0, 0); /* Textfarbe im Header */
+  padding: 20px; /* Innenabstand (Padding) für mehr Raum */
+  text-align: right; /* Text zentrieren */
+  border-radius: 0px; /* Abgerundete Ecken (optional) */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optionaler Schatten */
+  margin: 50px auto;
+}
+
+body {
+  background-color: #ffffff; /* Dunkelblau als Hintergrundfarbe */
+  color: rgb(0, 0, 0); /* Textfarbe für besseren Kontrast */
+}
+
+.rot {
+  color: rgb(167, 32, 32); /* Rot */
+  font-weight: bold; /* Fett */
+}
+
+@media only screen and (max-width: 950px) {
+  body {
+    width: 100%;
+  }
+  #menu a {
+    display: block;
+    border-bottom: 1px solid #afafaf;
+    padding: 5px 0 5px 20px;
+  }
+}
