@@ -59,26 +59,30 @@ body {
 }
 
 
+/* Container für das Marquee */
 .marquee-container {
-  width: 50%;          /* Container breitet sich über den gesamten Bildschirm aus */
-  overflow: hidden;     /* Verhindert das Überlaufen des Bildes */
-  position: relative;   /* Ermöglicht die Animation */
+  width: 100%;
+  height: 150px;  /* Containerhöhe für das Bild */
+  overflow: hidden;  /* Verhindert, dass das Bild außerhalb des Containers sichtbar ist */
+  position: relative;
+  background-color: #f0f0f0;  /* Hintergrundfarbe, damit der Container sichtbar ist */
 }
 
-/* Animation für das Bild */
-.marquee-image {
+/* Das Bild im Marquee */
+.marquee img {
   position: absolute;
-  animation: marquee 10s linear infinite; /* Marquee-Effekt (10s für die Bewegung, unendlich wiederholend) */
-  width: 150px;        /* Skalierung des Bildes */
-  height: auto;        /* Höhe bleibt proportional */
+  height: auto;  /* Höhe wird automatisch skaliert, um das Seitenverhältnis beizubehalten */
+  width: 200px;  /* Bildgröße anpassen */
+  transform: scale(0.8);  /* Skaliert das Bild */
+  animation: move 10s linear infinite;  /* Animation von rechts nach links */
 }
 
-/* Die Bewegung von rechts nach links */
-@keyframes marquee {
-  from {
-      left: 100%;       /* Startposition des Bildes (rechts außerhalb des Containers) */
+/* Die Animation für das Bewegen des Bildes */
+@keyframes move {
+  0% {
+      transform: translateX(100%) scale(0.8);  /* Startposition: außerhalb rechts */
   }
-  to {
-      left: -200px;     /* Endposition des Bildes (links außerhalb des Containers) */
+  100% {
+      transform: translateX(-100%) scale(0.8);  /* Endposition: außerhalb links */
   }
 }
