@@ -88,6 +88,7 @@
             background-color: #c0392b;
         }
     </style>
+</head>
   </head>
   <body>
   <div id=header>
@@ -107,28 +108,72 @@
     <div class="calculator">
         <input type="text" id="display" disabled>
         <div class="buttons">
-            <button class="clear" onclick="clearDisplay()">C</button>
-            <button onclick="appendToDisplay('7')">7</button>
-            <button onclick="appendToDisplay('8')">8</button>
-            <button onclick="appendToDisplay('9')">9</button>
-            <button class="operator" onclick="appendToDisplay('+')">+</button>
+            <button class="clear" id="clear">C</button>
+            <button class="number" data-value="7">7</button>
+            <button class="number" data-value="8">8</button>
+            <button class="number" data-value="9">9</button>
+            <button class="operator" data-value="+">+</button>
             
-            <button onclick="appendToDisplay('4')">4</button>
-            <button onclick="appendToDisplay('5')">5</button>
-            <button onclick="appendToDisplay('6')">6</button>
-            <button class="operator" onclick="appendToDisplay('-')">-</button>
+            <button class="number" data-value="4">4</button>
+            <button class="number" data-value="5">5</button>
+            <button class="number" data-value="6">6</button>
+            <button class="operator" data-value="-">-</button>
 
-            <button onclick="appendToDisplay('1')">1</button>
-            <button onclick="appendToDisplay('2')">2</button>
-            <button onclick="appendToDisplay('3')">3</button>
-            <button class="operator" onclick="appendToDisplay('*')">*</button>
+            <button class="number" data-value="1">1</button>
+            <button class="number" data-value="2">2</button>
+            <button class="number" data-value="3">3</button>
+            <button class="operator" data-value="*">*</button>
 
-            <button onclick="appendToDisplay('0')">0</button>
-            <button onclick="appendToDisplay('.')">.</button>
-            <button class="equal" onclick="calculateResult()">=</button>
-            <button class="operator" onclick="appendToDisplay('/')">/</button>
+            <button class="number" data-value="0">0</button>
+            <button class="number" data-value=".">.</button>
+            <button class="equal" id="equal">=</button>
+            <button class="operator" data-value="/">/</button>
         </div>
     </div>
+    <script>
+        const display = document.getElementById("display");
+        const clearButton = document.getElementById("clear");
+        const equalButton = document.getElementById("equal");
+
+        // Button EventListener hinzufügen
+        document.querySelectorAll(".number").forEach(button => {
+            button.addEventListener("click", () => {
+                display.value += button.getAttribute("data-value");
+            });
+        });
+
+        // Operator Buttons
+        document.querySelectorAll(".operator").forEach(button => {
+            button.addEventListener("click", () => {
+                display.value += button.getAttribute("data-value");
+            });
+        });
+
+        // Clear Button
+        clearButton.addEventListener("click", () => {
+            display.value = "";
+        });
+
+        // Berechnen Button
+        equalButton.addEventListener("click", () => {
+            try {
+                // Berechnung auswerten
+                display.value = evaluateExpression(display.value);
+            } catch (e) {
+                display.value = "Fehler";
+            }
+        });
+
+        // Berechnung durchführen
+        function evaluateExpression(expr) {
+            // Nur gültige Zeichen (Zahlen und Operatoren) erlauben
+            if (/[^0-9+\-*/().]/.test(expr)) {
+                throw new Error("Ungültige Eingabe");
+            }
+            return Function("return " + expr)();  // eval-safe Berechnung
+        }
+    </script>
+
 </div>
 <div id=footer>Jamie Habith Copyright 2025
 </div>
