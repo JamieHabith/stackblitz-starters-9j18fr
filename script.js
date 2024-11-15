@@ -24,4 +24,12 @@ setInterval(updateUhr, 1000);
 
 // Initiales Aufrufen der Funktion, um die Uhr sofort anzuzeigen
 updateUhr();
+function in_out(button, ID) {
+    if (document.getElementById(ID).style.display == 'none') {
+        button.innerHTML = 'weniger';
+        document.getElementById(ID).style.display = 'inline';
+    } else {
+        document.getElementById(ID).style.display = 'none';
+        button.innerHTML = 'mehr'; }
+}
 
