@@ -3,7 +3,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="styles.css" />
-    <script src="script2.js"></script>
 
     <head>
         <title>Website</title>
@@ -23,6 +22,7 @@
             <a href="rechner.html">Rechner</a>
             <a href="optionen.html">Optionen</a>
         </div>
+        <br>
         <div id=content>
             <h1">Postverteilung</h1>
                 <table border="1" class="post">
@@ -35,16 +35,20 @@
                     <tr>
                         <td id="PN">&nbsp;</td>
                     </tr>
+                    <tr><td><button onclick="trans();">Abholen</button></td></tr>
                 </table>
                 <table border="1" class="post">
                     <tr>
                         <td>Transport</td>
                     </tr>
                     <tr>
-                        <td>&nbsp;</td>
+                        <td id="TA">&nbsp;</td>
                     </tr>
                     <tr>
-                        <td>&nbsp;</td>
+                        <td id="TN">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td><button onclick="hand_out();">verteilen</button></td>
                     </tr>
                     <table border="1" class="post">
                         <tr>
@@ -52,16 +56,15 @@
                             <td>Zwerg</td>
                         </tr>
                         <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
+                            <td id="AA0">&nbsp;</td>
+                            <td id="AA1">&nbsp;</td>
                         </tr>
 
                         <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
+                            <td id="AAN0">&nbsp;</td>
+                            <td id="AAN1">&nbsp;</td>
                         </tr>
                     </table>
-
                 </table>
                 <script src="script2.js"></script>
                 <br><br>
