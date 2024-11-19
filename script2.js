@@ -2,9 +2,6 @@
 
 
 
-
-
-
 function restore(ID) {
     document.getElementById(ID + "A").innerHTML = empty;
     document.getElementById(ID + "N").innerHTML = empty;
@@ -21,13 +18,13 @@ function fill_up(ID) {
 
 
 function trans() {
-    if (document.getElementById("PA").innerHTML != empty) { fill_up("T"); restore("P"); }
+    if (document.getElementById("PA").innerHTML != "&nbsp;") { fill_up("T"); restore("P"); }
 }
 
 
 function hand_out() {
 
-    if (document.getElementById("TA").innerHTML != empty) {
+    if (document.getElementById("TA").innerHTML != "&nbsp;") {
 
         restore("T");
         document.getElementById("AA0").innerHTML = "";
@@ -50,8 +47,6 @@ function hand_out() {
         document.getElementById("AAN1").innerHTML = sum1;
     }
 }
-
-
 AL = new Array("Riese", "Zwerg");
 
 Stapel = new Array(AL[0], AL[1], AL[0], AL[1], AL[0], AL[0], AL[0], AL[0], AL[0], AL[1], AL[0], AL[1], AL[0], AL[0], AL[0], AL[0]);
@@ -62,3 +57,19 @@ fill_up("P");
 
 
 
+
+
+head =new Arrey( "Jahr","TK25","TK50","WK","Summe")
+L = head.length
+
+document.write("<table class='tab'>");
+
+document.write("<tr>");
+
+for( i=0; i<L; i++) {
+    document.write("<td>"+ head[i] + "</td>");
+
+    document.write("</tr>");
+
+    document.write("</table>");
+}

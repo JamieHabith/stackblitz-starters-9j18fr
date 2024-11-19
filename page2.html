@@ -1,30 +1,115 @@
 <!DOCTYPE html>
 <htmllang="de">
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width" />
-<link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script2.js"></script>
+
   <head>
     <title>Website</title>
   </head>
+
   <body>
-  <div id=header>
-  <h1>Tabelle</h1>
-  </div>
-  <div id=menu>
-  <a href="index.html">Start</a>
-  <a href="skripte.html">Skripte</a>
-  <a href="page2.html"class=active>Tabelle</a>
-  <a href="text.html">Text</a>
-  <a href="post.html">Post</a>
-  <a href="links.html">Links</a>
-  <a href="rechner.html">Rechner</a>
-  <a href="optionen.html">Optionen</a>
+    <div id=header>
+      <h1>Tabelle</h1>
     </div>
-	<div id=content>
-	<h1>Überschrift</h1>
-  <h4>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</h4>
-</div>
-<div id=footer>Jamie Habith Copyright 2025
-</div>
+    <div id=menu>
+      <a href="index.html">Start</a>
+      <a href="skripte.html">Skripte</a>
+      <a href="page2.html" class=active>Tabelle</a>
+      <a href="text.html">Text</a>
+      <a href="post.html">Post</a>
+      <a href="links.html">Links</a>
+      <a href="rechner.html">Rechner</a>
+      <a href="optionen.html">Optionen</a>
+    </div>
+    <div id=content>
+      <h1>Tabelle</h1>
+      <table border="1" class="tab">
+        <tr>
+          <td>Jahr</td>
+          <td>TK25</td>
+          <td>TK50</td>
+          <td>WK</td>
+          <td>Summe</td>
+        </tr>
+        <tr>
+          <td>2010</td>
+          <td>200</td>
+          <td>300</td>
+          <td>100</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>2011</td>
+          <td>200</td>
+          <td>300</td>
+          <td>100</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>2013</td>
+          <td>450</td>
+          <td>125</td>
+          <td>20</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>2014</td>
+          <td>400</td>
+          <td>150</td>
+          <td>150</td>
+          <td>-</td>
+        </tr>
+        <td>2015</td>
+        <td>100</td>
+        <td>100</td>
+        <td>50</td>
+        <td>-</td>
+        </tr>
+      </table>
+      <div>
+        <script>
+          head = new Array("Jahr", "TK25", "TK50", "WK", "Summe")
+
+          L = head.length
+          z = -1
+          tab = new Array();
+          tab[z+=1] = new Array(2010, 200, 300, 100, 0)
+          tab[z+=1] = new Array(2011, 200, 300, 100, 0)
+          tab[z+=1] = new Array(2012, 450, 125, 20, 0)
+          tab[z+=1] = new Array(2013, 450, 125, 20, 0)
+          tab[z+=1] = new Array(2014, 400, 150, 150, 0)
+          tab[z+=1] = new Array(2015, 100, 100, 50, 0)
+
+          H = tab.length
+          
+          document.write("<table class='tab'>");
+          document.write("<tr>");
+          for (i = 0; i < L; i++)
+            document.write("<td>" + head[i] + "</td>");
+          document.write("</tr>");
+
+          for (x = H-1; x >= 0; x--) {
+            document.write("<tr>");
+            for (i = 0; i < L; i++) {
+              if ((i > 0) && (i < L - 1)) {
+                tab[x][L - 1] += tab[x][i];
+              }
+              document.write("<td>" + tab[x][i] + "</td>");
+            }
+
+          }
+          document.write("</tr>");
+
+
+          document.write("</table>");
+
+        </script>
+      </div>
+    </div>
+    <div id="footer_2">
+    </div>
   </body>
-</html>
+
+  </html>
